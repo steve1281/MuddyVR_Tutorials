@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfx1ynwadck4u"]
+[gd_scene load_steps=11 format=3 uid="uid://bfx1ynwadck4u"]
 
 [ext_resource type="PackedScene" uid="uid://bbxpsi47ndsb0" path="res://Scenes/xr_orgin.tscn" id="1_6r0xc"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_71wxf"]
@@ -22,6 +22,16 @@ size = Vector3(5, 0.1, 5)
 [sub_resource type="BoxMesh" id="BoxMesh_hqlvt"]
 size = Vector3(5, 0.1, 5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1js74"]
+albedo_color = Color(0.606626, 0.606626, 0.606626, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_queu3"]
+material = SubResource("StandardMaterial3D_1js74")
+size = Vector3(1, 1, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1hqtb"]
+size = Vector3(1, 1, 0.5)
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_71wxf")
 
@@ -43,3 +53,12 @@ mesh = SubResource("BoxMesh_hqlvt")
 
 [node name="XROrigin3D" parent="." instance=ExtResource("1_6r0xc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.84288e-08, 0)
+
+[node name="Table" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.2423)
+mesh = SubResource("BoxMesh_queu3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Table"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table/StaticBody3D"]
+shape = SubResource("BoxShape3D_1hqtb")
