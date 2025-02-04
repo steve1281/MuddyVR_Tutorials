@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfx1ynwadck4u"]
+[gd_scene load_steps=7 format=3 uid="uid://bfx1ynwadck4u"]
+
+[ext_resource type="PackedScene" uid="uid://bbxpsi47ndsb0" path="res://Scenes/xr_orgin.tscn" id="1_6r0xc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gne40"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -36,3 +38,6 @@ shape = SubResource("BoxShape3D_6oabn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
 mesh = SubResource("BoxMesh_hqlvt")
+
+[node name="XROrigin3D" parent="." instance=ExtResource("1_6r0xc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.84288e-08, 0)
