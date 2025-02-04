@@ -35,3 +35,4 @@ top_level = true
 collision_layer = 524288
 collision_mask = 1023
 script = ExtResource("6_ts51w")
+player_height_max = 1.5
