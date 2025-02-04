@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfx1ynwadck4u"]
+[gd_scene load_steps=12 format=3 uid="uid://bfx1ynwadck4u"]
 
 [ext_resource type="PackedScene" uid="uid://bbxpsi47ndsb0" path="res://Scenes/xr_orgin.tscn" id="1_6r0xc"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_71wxf"]
+[ext_resource type="PackedScene" uid="uid://c5jyfl0s7owl7" path="res://Scenes/cube.tscn" id="3_jrvqy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gne40"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -62,3 +63,6 @@ mesh = SubResource("BoxMesh_queu3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table/StaticBody3D"]
 shape = SubResource("BoxShape3D_1hqtb")
+
+[node name="PickableObject" parent="." instance=ExtResource("3_jrvqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, -1.1577)
