@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bfx1ynwadck4u"]
+[gd_scene load_steps=24 format=3 uid="uid://bfx1ynwadck4u"]
 
 [ext_resource type="PackedScene" uid="uid://bbxpsi47ndsb0" path="res://Scenes/xr_orgin.tscn" id="1_6r0xc"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_71wxf"]
@@ -63,6 +63,16 @@ size = Vector3(0.5, 0.5, 0.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_f8whh"]
 size = Vector3(0.5, 0.5, 0.5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtifb"]
+albedo_color = Color(2.76752e-07, 0.242227, 0.242286, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q2jyg"]
+material = SubResource("StandardMaterial3D_wtifb")
+size = Vector3(0.5, 5, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8yjdh"]
+size = Vector3(0.5, 5, 5)
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_71wxf")
 
@@ -80,6 +90,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 shape = SubResource("BoxShape3D_6oabn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0153027, 0)
 mesh = SubResource("BoxMesh_hqlvt")
 
 [node name="XROrigin3D" parent="." instance=ExtResource("1_6r0xc")]
@@ -126,3 +137,15 @@ mesh = SubResource("BoxMesh_f0owt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Parkour/Block1/StaticBody3D"]
 shape = SubResource("BoxShape3D_f8whh")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.80345, -4.84288e-08, 0)
+
+[node name="Wall" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+mesh = SubResource("BoxMesh_q2jyg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Wall/StaticBody3D"]
+shape = SubResource("BoxShape3D_8yjdh")
