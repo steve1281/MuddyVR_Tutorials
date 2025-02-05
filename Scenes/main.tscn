@@ -1,9 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://bfx1ynwadck4u"]
+[gd_scene load_steps=27 format=3 uid="uid://bfx1ynwadck4u"]
 
 [ext_resource type="PackedScene" uid="uid://bbxpsi47ndsb0" path="res://Scenes/xr_orgin.tscn" id="1_6r0xc"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_71wxf"]
 [ext_resource type="PackedScene" uid="uid://c5jyfl0s7owl7" path="res://Scenes/cube.tscn" id="3_jrvqy"]
 [ext_resource type="PackedScene" uid="uid://cr4xoxsm1h277" path="res://Scenes/rock_climb_object.tscn" id="4_e27sm"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="5_x0y3b"]
+[ext_resource type="PackedScene" uid="uid://3dhu75oky811" path="res://Scenes/game_ui.tscn" id="6_ykd6h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gne40"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -189,3 +191,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.66041, -1.55564)
 
 [node name="RockClimbObject13" parent="ClimableWall/Wall" instance=ExtResource("4_e27sm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -1.21838, -1.95634)
+
+[node name="UI" type="Node3D" parent="."]
+
+[node name="Viewport2Din3D" parent="UI" instance=ExtResource("5_x0y3b")]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 2, -2)
+screen_size = Vector2(1280, 768)
+collision_layer = 5242880
+scene = ExtResource("6_ykd6h")
+viewport_size = Vector2(640, 360)
+unshaded = true
+scene_properties_keys = PackedStringArray()
