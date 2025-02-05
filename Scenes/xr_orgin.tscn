@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbxpsi47ndsb0"]
+[gd_scene load_steps=11 format=3 uid="uid://bbxpsi47ndsb0"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_1yfjj"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_qvhar"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_t4h3p"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_egadr"]
+[ext_resource type="PackedScene" uid="uid://bxm1ply47vaan" path="res://addons/godot-xr-tools/functions/movement_climb.tscn" id="4_ro6mu"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_sv8rt"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="5_peks7"]
 [ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="6_kdahl"]
@@ -35,6 +36,8 @@ strafe = true
 
 [node name="FunctionPickup" parent="LeftHand" instance=ExtResource("3_egadr")]
 
+[node name="MovementClimb" parent="LeftHand" instance=ExtResource("4_ro6mu")]
+
 [node name="RightHand" type="XRController3D" parent="."]
 tracker = &"right_hand"
 
@@ -48,6 +51,8 @@ step_turn_angle = 45.0
 
 [node name="MovementJump" parent="RightHand" instance=ExtResource("6_kdahl")]
 jump_button_action = "ax_button"
+
+[node name="MovementClimb" parent="RightHand" instance=ExtResource("4_ro6mu")]
 
 [node name="PlayerBody" parent="." instance=ExtResource("5_peks7")]
 player_height_max = 1.5
