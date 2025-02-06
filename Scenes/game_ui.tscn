@@ -47,12 +47,4 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Exit Game"
 
-[node name="HSlider" type="HSlider" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="TextEdit" type="TextEdit" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-placeholder_text = "Why not Enter data here?"
-
 [connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
