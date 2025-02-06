@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bbxpsi47ndsb0"]
+[gd_scene load_steps=13 format=3 uid="uid://bbxpsi47ndsb0"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_1yfjj"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_qvhar"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="5_peks7"]
 [ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="6_kdahl"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="8_errfh"]
+[ext_resource type="PackedScene" uid="uid://kyhaogt0a4q8" path="res://addons/godot-xr-tools/functions/movement_flight.tscn" id="11_p7ekc"]
 
 [sub_resource type="Resource" id="Resource_fq2yl"]
 script = ExtResource("8_errfh")
@@ -69,3 +70,5 @@ show_target = true
 player_height_max = 1.5
 physics = SubResource("Resource_fq2yl")
 ground_control = 2
+
+[node name="MovementFlight" parent="." instance=ExtResource("11_p7ekc")]
