@@ -201,4 +201,4 @@ collision_layer = 5242880
 scene = ExtResource("6_ykd6h")
 viewport_size = Vector2(640, 360)
 unshaded = true
-scene_properties_keys = PackedStringArray()
+scene_properties_keys = PackedStringArray("Built-in script")

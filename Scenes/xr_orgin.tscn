@@ -67,6 +67,7 @@ laser_length = 1
 show_target = true
 
 [node name="PlayerBody" parent="." instance=ExtResource("5_peks7")]
+player_calibrate_height = false
 player_height_max = 1.5
 physics = SubResource("Resource_fq2yl")
 ground_control = 2
